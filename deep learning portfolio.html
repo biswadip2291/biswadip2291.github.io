@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Portfolio Optimization | Biswadip Portfolio</title>
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Poppins&family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <style>
+    .section-heading {
+      font-weight: 700;
+      font-size: 2.2rem;
+      color: #2b2b2b;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-subheading {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: #6c757d;
+      margin-bottom: 2rem;
+    }
+
+    .project-section h4 {
+      font-weight: 600;
+      color: #0d6efd;
+      margin-top: 2rem;
+    }
+
+    .project-section ul {
+      padding-left: 1.2rem;
+    }
+
+    .btn-custom {
+      margin-top: 2rem;
+      padding: 0.5rem 1.25rem;
+    }
+
+    .container {
+      max-width: 900px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="container py-5 project-section">
+    <h2 class="section-heading text-center">Portfolio Optimization Using Deep Learning</h2>
+    <p class="section-subheading text-center">A deep-learning approach for forecasting stock prices and making strategic “Keep” or “Sell” decisions for AAPL & XLC.</p>
+
+    <h4>Project Overview</h4>
+    <p>
+      This project leverages CNN-Bidirectional LSTM models with Attention to forecast stock prices for optimized portfolio management.
+      The model makes buy/sell decisions based on predictive analytics and risk thresholds.
+    </p>
+
+    <h4>Problem Statement</h4>
+    <p>
+      Traditional financial forecasting often lacks precision in volatile markets. Our objective was to build a deep learning model
+      that can accurately predict stock prices and inform investment decisions for assets like AAPL and XLC.
+    </p>
+
+    <h4>Dataset and Sources</h4>
+    <ul>
+      <li><strong>Source:</strong> Yahoo Finance</li>
+      <li><strong>Assets:</strong> AAPL (Apple Inc.), XLC (Communication Services ETF)</li>
+      <li><strong>Date Range:</strong> Oct 31, 2023 – Oct 31, 2024</li>
+      <li><strong>Features:</strong> Open, High, Low, Close, Adj Close, Volume</li>
+    </ul>
+
+    <h4>Methodology</h4>
+    <ul>
+      <li>Used MinMaxScaler to normalize data</li>
+      <li>60-day lookback window for time series modeling</li>
+      <li>Stacked Conv1D + Bi-LSTM layers with attention mechanism</li>
+      <li>Optimized with Adam and MSE loss</li>
+      <li>Trained for 200 epochs with batch size 32</li>
+    </ul>
+
+   <h4 class="text-primary mt-4">Model Prediction & Evaluation</h4>
+<p>
+  CNN-BiLSTM with Attention outperformed other models with a significantly lower Mean Squared Error (MSE). Predictions were inverse-transformed
+  to compare with actual prices and plotted for visualization. A decision-making module labeled each asset as “Keep” or “Sell.”
+</p>
+
+<div class="table-responsive mt-3">
+  <table class="table table-bordered table-striped">
+    <thead class="table-dark text-center">
+      <tr>
+        <th scope="col">Models</th>
+        <th scope="col">Average MSE</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+        <td><strong>CNN-Bidirectional LSTM with Attention</strong></td>
+        <td><strong>6.42</strong></td>
+      </tr>
+      <tr>
+        <td>CNN-LSTM Based Model</td>
+        <td>9.74</td>
+      </tr>
+      <tr>
+        <td>Combined SARIMA CNN-LSTM</td>
+        <td>38.53</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h4 class="text-primary mt-4">Results</h4>
+<p>
+  Our model demonstrated robust predictive power, guiding users with actionable insights. Visualizations like line plots
+  and candlestick charts helped interpret model predictions effectively.
+</p>
+
+<!-- AAPL Line Chart -->
+<div class="text-center my-4">
+  <img src="assets/img/appl_prediction.png" class="img-fluid rounded shadow" alt="Actual vs Predicted Stock Prices for AAPL">
+  <p class="mt-2 text-muted"><small>Figure 1: Actual vs Predicted Stock Prices for AAPL</small></p>
+</div>
+
+<!-- XLC Line Chart -->
+<div class="text-center my-4">
+  <img src="assets/img/XLC_prediction.png" class="img-fluid rounded shadow" alt="Actual vs Predicted Stock Prices for XLC">
+  <p class="mt-2 text-muted"><small>Figure 2: Actual vs Predicted Stock Prices for XLC</small></p>
+</div>
+
+<!-- AAPL Candlestick Chart -->
+<div class="text-center my-4">
+  <img src="assets/img/apple_candle.png" class="img-fluid rounded shadow" alt="Candlestick Chart for AAPL">
+  <p class="mt-2 text-muted"><small>Figure 3: Simulated Candlestick Chart for AAPL</small></p>
+</div>
+
+<!-- XLC Candlestick Chart -->
+<div class="text-center my-4">
+  <img src="assets/img/XLC_candle.png" class="img-fluid rounded shadow" alt="Candlestick Chart for XLC">
+  <p class="mt-2 text-muted"><small>Figure 4: Simulated Candlestick Chart for XLC</small></p>
+</div>
+
+<h4 class="text-primary mt-4">Decision-Making Process</h4>
+
+<p><strong>Purpose:</strong> Decide whether to <em>"Keep"</em> or <em>"Sell"</em> a stock based on future price predictions.</p>
+
+<h5 class="mt-3">Logic</h5>
+<ul>
+  <li>Check if the predicted trend is <strong>upward</strong> or <strong>downward</strong>.</li>
+  <li>Evaluate the <strong>maximum potential drop</strong> in price compared to the current price.</li>
+  <li>If the trend is downward or the drop exceeds <strong>5%</strong>, recommend <strong>"Sell."</strong> Otherwise, recommend <strong>"Keep."</strong></li>
+</ul>
+
+<h5 class="mt-3">Implementation</h5>
+<ul>
+  <li>For each stock, evaluate predictions for the next few days.</li>
+  <li>Store decisions with reasoning (e.g., <em>"Predicted downward trend"</em> or <em>"Acceptable drop"</em>).</li>
+</ul>
+
+<h5 class="mt-3">Output</h5>
+<p>Below is the actual system-generated output summarizing the prediction-based decision for stock actions.</p>
+
+<div class="text-center my-4">
+  <img src="assets/img/descision.png" class="img-fluid rounded shadow" alt="Stock Decision-Making Output">
+  <p class="mt-2 text-muted"><small>Figure: System Output Showing Predicted Decisions for Different Time Windows</small></p>
+</div>
+
+
+    <h4>Real-World Impact</h4>
+    <p>
+    This system provides a scalable, real-time decision support tool for portfolio management,
+  reducing emotional trading and enhancing strategic investment decisions.
+    </p>
+
+    <div class="text-center">
+      <a href="https://github.com/biswadip2291/Portfolio-Optimization-Using-Bidirectional-CNN-LSTM-with-Attention-Mechanism"
+         class="btn btn-outline-dark btn-custom" target="_blank">
+        <i class="bi bi-github"></i> View on GitHub
+      </a>
+    </div>
+  </section>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

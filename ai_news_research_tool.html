@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>AI-Powered News Research Tool | Biswadip Portfolio</title>
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+  <section class="container py-5">
+    <h2 class="fw-bold mb-4">AI-Powered News Research Tool</h2>
+
+    <h4 class="text-primary">Project Overview</h4>
+    <p>
+      This project aims to simplify news consumption by allowing users to input multiple article URLs and ask questions in plain English. The tool returns concise, AI-generated answers with relevant source links.
+    </p>
+
+    <h4 class="text-primary mt-4">Problem Statement</h4>
+    <p>
+      In a world overwhelmed with news, it's hard to quickly understand and verify key insights across multiple sources. This tool helps users:
+      <ul>
+        <li>Summarize complex articles efficiently</li>
+        <li>Extract insights in real time</li>
+        <li>Ask natural-language questions about news</li>
+        <li>Get source-backed answers for transparency</li>
+      </ul>
+    </p>
+
+    <h4 class="text-primary mt-4">Tech Stack</h4>
+    <ul>
+      <li><strong>Backend:</strong> Python, LangChain, OpenAI API, FAISS, python-dotenv</li>
+      <li><strong>Frontend:</strong> Streamlit</li>
+      <li><strong>Features:</strong> News URL input, semantic search, chunked text analysis, citation-enabled answers</li>
+    </ul>
+
+    <h4 class="text-primary mt-5">🎬 Live Demo</h4>
+<p>
+  This demo shows how the tool extracts news insights, answers questions using LLMs, and provides credible sources — all in real-time.
+</p>
+
+<video class="w-100 rounded shadow-sm" controls>
+  <source src="assets/img/26.05.2025_20.11.04_REC.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+
+    <h4 class="text-primary mt-4">System Architecture</h4>
+    <p>
+      The system uses recursive chunking to preserve context from article text. FAISS indexes the chunks for fast similarity search. LangChain connects OpenAI's LLM to the FAISS index and Streamlit serves as the interactive user interface.
+    </p>
+
+    <h4 class="text-primary mt-4">Functionality Highlights</h4>
+    <ul>
+      <li>Input multiple news URLs</li>
+      <li>Ask natural language questions</li>
+      <li>Receive summarized responses with citations</li>
+      <li>Toggle between articles or download extracted content</li>
+    </ul>
+
+    <h4 class="text-primary mt-4">Real-World Impact</h4>
+    <p>
+      This tool enables faster, more transparent news consumption. Journalists, researchers, and everyday users can quickly verify, compare, and understand large volumes of news with AI-assisted summaries and traceable references.
+    </p>
+
+    <div class="mt-4">
+      <a href="https://github.com/biswadip2291/AI_news_langchain" target="_blank" class="btn btn-outline-dark me-2">
+        <i class="bi bi-github"></i> View on GitHub
+      </a>
+      <a href="index.html#portfolio" class="btn btn-outline-primary">
+        <i class="bi bi-arrow-left"></i> Back to Portfolio
+      </a>
+    </div>
+  </section>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

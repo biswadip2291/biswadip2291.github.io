@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Sentiment Classification | Biswadip Portfolio</title>
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+  <section class="container py-5">
+    <h2 class="fw-bold mb-4">Sentiment Classification of Movie Reviews</h2>
+
+    <h4 class="text-primary">Project Overview</h4>
+    <p>
+      Engineered a sentiment analysis pipeline for over 50K movie reviews. Integrated traditional NLP techniques such as
+      Bag of Words, Bigrams, POS tagging, and LIWC feature extraction. Models were evaluated with Random Forest and SVM,
+      with accuracy optimized via hyperparameter tuning.
+    </p>
+
+    <h4 class="text-primary mt-4">Problem Statement</h4>
+    <p>
+      Identifying nuanced sentiment in movie reviews poses challenges due to varied language use. Our aim was to develop
+      a robust model using a diverse set of features to accurately classify sentiments on a multi-class scale.
+    </p>
+
+    <h4 class="text-primary mt-4">Dataset and Sources</h4>
+    <ul>
+      <li>Source: Movie review dataset shared in NLP coursework (2024)</li>
+      <li>Total Records: ~50,000+ labeled reviews with ratings (0–4 scale)</li>
+      <li>Features: Tokens, POS, sentiment lexicons (SL), LIWC-based categories</li>
+    </ul>
+
+    <h4 class="text-primary mt-4">Methodology</h4>
+    <ul>
+      <li>Performed preprocessing: lowercasing, punctuation removal, stopwords filtering</li>
+      <li>Extracted unigram, bigram, POS, SL, LIWC, and Combined SL-LIWC features</li>
+      <li>Trained Random Forest and SVM models on both filtered and unfiltered datasets</li>
+      <li>Evaluated accuracy using 5-fold cross-validation</li>
+    </ul>
+
+<!-- ======= Dashboard Carousel Section ======= -->
+<h4 class="text-primary mt-4">Key Visualizations</h4>
+<p>
+  Explore visual insights from sentiment classification — including label distributions, word frequencies, and linguistic patterns.
+</p>
+
+<div id="sentimentCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
+  <div class="carousel-inner">
+
+    <!-- Slide 1: Sentiment Label Distribution -->
+    <div class="carousel-item active">
+      <img src="assets/img/distribution.png" class="d-block w-100 rounded shadow-sm" alt="Sentiment Label Distribution">
+      <div class="mt-3 text-center">
+        <h6 class="fw-semibold mb-1">Distribution of Sentiment Labels</h6>
+        <p class="small text-muted">Displays the frequency of sentiment scores (0–4), revealing data imbalance and concentration around neutral sentiment.</p>
+      </div>
+    </div>
+
+    <!-- Slide 2: Top 20 Word Frequencies -->
+    <div class="carousel-item">
+      <img src="assets/img/word_freq.png" class="d-block w-100 rounded shadow-sm" alt="Top 20 Word Frequencies">
+      <div class="mt-3 text-center">
+        <h6 class="fw-semibold mb-1">Top 20 Words Frequency Distribution</h6>
+        <p class="small text-muted">Highlights frequently used words in reviews, aiding in understanding linguistic patterns.</p>
+      </div>
+    </div>
+
+    <!-- Slide 3: Word Cloud -->
+    <div class="carousel-item">
+      <img src="assets/img/word_cloud.png" class="d-block w-100 rounded shadow-sm" alt="Word Cloud">
+      <div class="mt-3 text-center">
+        <h6 class="fw-semibold mb-1">Word Cloud of Movie Reviews</h6>
+        <p class="small text-muted">Visualizes common words across reviews; larger words represent higher frequency, offering thematic insights.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Carousel Controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#sentimentCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#sentimentCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<!-- ======= End Dashboard Carousel Section ======= -->
+
+
+
+    <h4 class="text-primary mt-4">Model Prediction & Evaluation</h4>
+    <p>
+      Across classifiers, the <strong>Combined SL-LIWC</strong> feature consistently delivered strong results, indicating its value
+      in capturing both linguistic and psychological cues. Random Forest outperformed SVM, especially on filtered data.
+      Unigram (0.56) and LIWC (0.54) features also performed well. The Combined SL-LIWC set remained stable across both
+      filtered and unfiltered contexts.
+    </p>
+
+    <div class="table-responsive mt-3">
+      <table class="table table-bordered text-center">
+        <thead class="table-light">
+          <tr>
+            <th>Feature Set</th>
+            <th>Unigram</th>
+            <th>Bigram</th>
+            <th>POS</th>
+            <th>SL</th>
+            <th>LIWC</th>
+            <th>Combined SL-LIWC</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Filtered</th>
+            <td>0.56</td>
+            <td>0.52</td>
+            <td>0.36</td>
+            <td>0.48</td>
+            <td>0.54</td>
+            <td>0.48</td>
+          </tr>
+          <tr>
+            <th>Unfiltered</th>
+            <td>0.52</td>
+            <td>0.44</td>
+            <td>0.48</td>
+            <td>0.44</td>
+            <td>0.52</td>
+            <td>0.48</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  
+
+    <h4 class="text-primary mt-4">Conclusion</h4>
+    <p>
+      The use of linguistically rich and psychologically grounded features improved sentiment classification performance.
+      Filtering had mixed effects depending on the model and feature type. Overall, ensemble models like Random Forest
+      combined with LIWC and SL-based features offered the most robust results.
+    </p>
+
+    <!-- ======= Real-World Impact Section ======= -->
+<h4 class="text-primary mt-5">Real-World Impact</h4>
+<p>
+  This sentiment classification framework can support content moderation, brand monitoring, and customer experience analysis. 
+  Its high performance using interpretable features like LIWC and sentiment lexicons makes it ideal for use in product reviews, movie feedback, and social media analytics.
+</p>
+
+
+    <div class="mt-4">
+      <a href="https://github.com/biswadip2291/nlp_final-project" target="_blank" class="btn btn-outline-dark me-2">
+        <i class="bi bi-github"></i> View on GitHub
+      </a>
+      <a href="index.html#portfolio" class="btn btn-outline-primary">
+        <i class="bi bi-arrow-left"></i> Back to Portfolio
+      </a>
+    </div>
+  </section>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Real Estate Forecasting | Biswadip Portfolio</title>
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+  <section class="container py-5">
+    <h2 class="fw-bold mb-4">Real Estate Price Forecasting</h2>
+
+    <h4 class="text-primary">Project Overview</h4>
+    <p>
+      This project focuses on forecasting real estate prices in Connecticut using historical property sales data.
+      With over 1.2 million records from 2001 to 2024, we applied time-series modeling to predict pricing trends.
+    </p>
+
+    <h4 class="text-primary mt-4">Problem Statement</h4>
+    <p>
+      Real estate markets are influenced by complex temporal patterns. The goal was to uncover seasonal and macro trends
+      and generate accurate forecasts that support both investment and policy decisions.
+    </p>
+
+    <h4 class="text-primary mt-4">Dataset & Sources</h4>
+    <ul>
+      <li><strong>Source:</strong> Connecticut Open Data (Real Estate Transactions)</li>
+      <li><strong>Records:</strong> 1.2M+ property transactions</li>
+      <li><strong>Features:</strong> Sale Date, Sale Amount, Property Location, Year Built, Property Type</li>
+    </ul>
+
+    <h4 class="text-primary mt-4">Methodology</h4>
+    <ul>
+      <li>Used PySpark to preprocess and clean large-scale transaction data</li>
+      <li>Applied Facebook Prophet for time-series modeling and forecast generation</li>
+      <li>Resampled monthly sales and removed outliers to improve trend visibility</li>
+      <li>Evaluated model using R² and RMSE (R² = 0.92)</li>
+    </ul>
+
+    <h4 class="text-primary mt-4">Model Prediction & Evaluation</h4>
+    <p>
+      The model captured strong seasonal patterns in Connecticut's housing market.
+      Monthly forecasted values closely matched actual sales trends.
+      The interactive dashboard offers filtering by county and year range.
+    </p>
+
+    <h4 class="text-primary mt-4">Real-World Impact</h4>
+    <p>
+      The forecasting system helps local agencies, buyers, and investors anticipate future pricing.
+      By understanding regional price behavior, stakeholders can make more informed real estate decisions.
+    </p>
+
+    <div class="mt-4">
+      <a href="https://github.com/biswadip2291/Real-Estate-Price-Forecasting" target="_blank" class="btn btn-outline-dark me-2">
+        <i class="bi bi-github"></i> View on GitHub
+      </a>
+      
+      <a href="index.html#portfolio" class="btn btn-outline-primary">
+        <i class="bi bi-arrow-left"></i> Back to Portfolio
+      </a>
+    </div>
+  </section>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
